@@ -1,75 +1,132 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ornamentalPlantSchema = new mongoose.Schema({
   productName: {
-      type: String,
-      required: true,
+    type: String,
+    required: true,
   },
   description: {
-      type: String,
-      required: true,
+    type: String,
+    required: true,
   },
   productImg: [
-     { 
-          imgUrl: {
-              type: String,
-              required: true,
-          },
-      }
+    {
+      imgUrl: {
+        type: String,
+        required: true,
+      },
+    },
   ],
   price: {
-      type: Number,
-      required: true,
+    type: Number,
+    required: true,
   },
   category: {
-      type: String,
-      required: true,
+    type: String,
+    required: true,
   },
   intro: [
     {
-        introText: {
-            type: String,
-        }
-    }
+      introText: {
+        type: String,
+      },
+    },
   ],
   characteristics: [
     {
-        characteristicsText: {
-            type: String,
-        }
-    }
+      characteristicsText: {
+        type: String,
+      },
+    },
   ],
   meaning: [
     {
-        meaningText: {
-            type: String,
-        }
-    }
+      meaningText: {
+        type: String,
+      },
+    },
   ],
   uses: [
     {
-        usesText: {
-            type: String,
-        }
-    }
+      usesText: {
+        type: String,
+      },
+    },
   ],
   productCare: [
     {
-        productCareText: {
-            type: String,
-        }
-    }
+      productCareText: {
+        type: String,
+      },
+    },
   ],
-  newProduct: { 
-      type: Boolean, 
-      default: false 
+  newProduct: {
+    type: Boolean,
+    default: false,
   },
-  trendingProduct: { 
-      type: Boolean, 
-      default: false 
+  trendingProduct: {
+    type: Boolean,
+    default: false,
   },
-})
+});
 
-let ornamentalPlant = mongoose.model('ornamental plant', ornamentalPlantSchema)
+// hóa đơn thanh toán
+const billSchema = new mongoose.Schema({
+  nameCustomer: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: Number,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  province: {
+    type: String,
+    required: true,
+  },
+  zipcode: {
+    type: String,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+  totalAmount: { 
+    type: Number, 
+    required: true 
+  },
+  totalQuantity: { 
+    type: Number, 
+    required: true 
+  },
+  productName: {
+    type: String,
+    required: true,
+  },
+  imgUrl: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+  },
+});
 
-module.exports = { ornamentalPlant }
+let ornamentalPlant = mongoose.model("ornamental plant", ornamentalPlantSchema);
+let bill = mongoose.model("bill", billSchema);
+
+module.exports = { ornamentalPlant, bill };

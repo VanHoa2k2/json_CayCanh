@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const productRoute = require('./routes/product')
+const billRoute = require('./routes/bill')
 
 dotenv.config()
 
@@ -22,6 +23,7 @@ app.use(morgan("common"))
 app.use(express.static('public'))
 //ROUTES
 app.use("/json_CayCanh", productRoute)
+app.use("/json_HoaDon", billRoute)
 
 app.listen(5000, ()=> {
     console.log('Server is running.......')
