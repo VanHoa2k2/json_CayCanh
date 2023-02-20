@@ -72,7 +72,7 @@ const ornamentalPlantSchema = new mongoose.Schema({
 
 // hóa đơn thanh toán
 const billSchema = new mongoose.Schema({
-  nameCustomer: {
+  username: {
     type: String,
     required: true,
   },
@@ -100,30 +100,38 @@ const billSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  totalAmount: { 
-    type: Number, 
-    required: true 
-  },
-  totalQuantity: { 
-    type: Number, 
-    required: true 
-  },
-  productName: {
-    type: String,
-    required: true,
-  },
-  imgUrl: {
-    type: String,
-    required: true,
-  },
-  price: {
+  totalAmount: {
     type: Number,
     required: true,
   },
-  quantity: {
+  totalQuantity: {
     type: Number,
     required: true,
   },
+  billProduct: [
+    {
+      id: {
+        type: String,
+        required: true,
+      },
+      productName: {
+        type: String,
+        required: true,
+      },
+      imgUrl: {
+        type: String,
+        required: true,
+      },
+      price: {
+        type: Number,
+        required: true,
+      },
+      quantity: {
+        type: Number,
+        required: true,
+      },
+    },
+  ],
 });
 
 let ornamentalPlant = mongoose.model("ornamental plant", ornamentalPlantSchema);
