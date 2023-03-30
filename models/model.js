@@ -60,9 +60,9 @@ const ornamentalPlantSchema = new mongoose.Schema({
       },
     },
   ],
-  newProduct: {
-    type: Boolean,
-    default: false,
+  purchases: {
+    type: Number,
+    default: 0,
   },
   trendingProduct: {
     type: Boolean,
@@ -131,7 +131,7 @@ const billSchema = new mongoose.Schema({
         required: true,
       },
     },
-  ],
+  ]
 });
 
 let ornamentalPlant = mongoose.model("ornamental plant", ornamentalPlantSchema);
