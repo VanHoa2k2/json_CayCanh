@@ -12,7 +12,8 @@ const ornamentalPlantSchema = new mongoose.Schema({
   productImg: [
     {
       imgUrl: {
-        type: Image,
+        type: String,
+        required: true,
       },
     },
   ],
