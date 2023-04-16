@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const productRoute = require('./routes/product')
 const billRoute = require('./routes/bill')
+const path = require('path')
 
 dotenv.config()
 
@@ -21,6 +22,8 @@ app.use(morgan("common"))
 
 //PUBLIC
 app.use(express.static('public'))
+// app.use('/images', express.static('/images'))
+app.use('/images', express.static(path.join(__dirname, '/images')))
 //ROUTES
 app.use("/json_CayCanh", productRoute)
 app.use("/json_HoaDon", billRoute)
