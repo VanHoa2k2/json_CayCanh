@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// var moment = require('moment');
+var moment = require("moment");
 
 const ornamentalPlantSchema = new mongoose.Schema({
   productName: {
@@ -68,11 +68,11 @@ const ornamentalPlantSchema = new mongoose.Schema({
   trendingProduct: {
     type: Boolean,
     default: false,
+  },
+  dateAdded: {
+    type: Date,
+    default: moment()
   }
-  // dateAdded: {
-  //   type: Date,
-  //   default: moment()
-  // }
 });
 
 // hóa đơn thanh toán
