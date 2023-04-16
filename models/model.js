@@ -71,7 +71,6 @@ const ornamentalPlantSchema = new mongoose.Schema({
   },
   dateAdded: {
     type: Date,
-    default: moment()
   }
 });
 
