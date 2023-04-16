@@ -68,6 +68,7 @@ const ornamentalPlantSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  dateAdded: new Date()
 });
 
 // hóa đơn thanh toán
