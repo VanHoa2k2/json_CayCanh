@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-var moment = require("moment");
 
 const ornamentalPlantSchema = new mongoose.Schema({
   productName: {
@@ -25,6 +24,9 @@ const ornamentalPlantSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
+  },
+  size: {
+    type: String,
   },
   intro: [
     {
